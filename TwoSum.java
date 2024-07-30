@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TwoSum {
@@ -18,11 +18,14 @@ public class TwoSum {
     }
 
     public static int[] twoSum(int n, int[] arr, int target) {
-        for(int i = 0 ; i < arr.length - 1 ; i++) {
-            for(int j = (i + 1) ; j < arr.length ; j++) {
-                if((arr[i] + arr[j]) == target) {
-                    return new int[] {i, j};
-                }
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for(int i = 0 ; i < n ; i++) {
+            hashMap.put(arr[i], i);
+        }
+        for(int i = 0 ; i < n ; i++) {
+            int sum = target - arr[i];
+            if(hashMap.containsKey(sum) && i != hashMap.get(sum)) {
+                return new int[] {i, hashMap.get(sum)};
             }
         }
         return new int[] {-1, -1};
