@@ -8,7 +8,7 @@ public class CountGoodPairsACCEPTED {
         int n = scannerObject.nextInt();
         int m = scannerObject.nextInt();
         int k = scannerObject.nextInt();
-        int[] num1 = new int[n];
+        int[] num1 = new int[n];;
         int[] num2 = new int[m];
         for (int i = 0; i < n; i++) {
             num1[i] = scannerObject.nextInt();
