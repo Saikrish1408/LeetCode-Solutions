@@ -20,6 +20,6 @@ public class CheckBalanceString {
                 oddSum += integerValue;
             }
         }
-        return evenSum == oddSum;
+        return (evenSum == oddSum);
     }
 }
